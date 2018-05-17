@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/semantic.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="public/js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="public/css/introStyles.css">
+
+</head>
+
+<body>
+  <div class="intro">
+    <div class="welcome">
+      <div class="heading">
+            Welcome!
+      </div>
+      <h3>Thank you for taking part in our gaze experiment!</h3>
+      <br />
+    </div>
+  <br />
+    <div class="main-content">
+      Imagine the following: You need to make a choice between two hotels on a booking platform for your holiday stay.
+      Both hotels are equally preferable to you with respect to cost, location, facilities, services, etc. <br />
+      Other users' ratings are aggregated and summarized by their number of ratings, the mean of their ratings, their distribution
+      over the different rating values as well as by the origin of ratings (i.e. if the ratings were based on all users or from users similar to you).<br />
+      Given the above, which of the two hotels below would you choose when you were to solely consider the ratings of the two accomodations
+    </div>
+    <br />
+
+    <div class="enterUserId">
+      <h4>Please enter your user ID:</h4>
+      <form method="post" action="processUserID.php">
+        <input type="text" name="userID" required>
+        <br />
+        <br />
+        <input type="submit" value="Submit" id="intro">
+      </form>
+    </div>
+
+  </div>
+</body>
