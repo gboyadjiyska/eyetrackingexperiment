@@ -1,6 +1,7 @@
 <?php
 
       if(isset($_POST['userID'])){
+
         $myfile2 = fopen("temp/userID.txt", "w");
         $userID = $_POST['userID'].";\n";
         for ($i = 0; $i <= 5; $i++) {
@@ -8,13 +9,15 @@
         }
         header("Location: main.html");
 
+
       }
 
       if(isset($_POST['submit'])){
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
+
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
         }
 
         //write on a file only the selected ranks
@@ -28,11 +31,13 @@
         $second_page_array = file("data/data1.txt",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $final_array = [];
 
+
         foreach($first_page_array as $key=>$first_page){
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
+
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -46,8 +51,13 @@
     if(isset($_POST['submit2'])){
       $t=time();
       $myfile1 = fopen("temp/time.txt", "w");
+
       for ($i = 0; $i <= 5; $i++) {
         fwrite($myfile1, $t.";\n");
+        //changes
+        file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+        //changes
+
       }
       //write on a file only the selected tags
       $ranks = fopen("temp/ranks.txt", "w");
@@ -64,7 +74,7 @@
          $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
       }
 
-      file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+      file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
       //delete the content of the temp files
       file_put_contents("temp/ranks.txt", "");
       file_put_contents("temp/time.txt", "");
@@ -77,7 +87,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+          file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+          //changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -94,7 +107,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -106,7 +119,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -123,7 +139,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -135,7 +151,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -152,7 +171,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -164,7 +183,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -181,7 +203,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -193,7 +215,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -210,7 +235,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -222,7 +247,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -239,7 +267,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -251,7 +279,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -268,7 +299,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -280,7 +311,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -297,7 +331,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -309,7 +343,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+          //changes
+file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+//changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -326,7 +363,7 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/time.txt", "");
@@ -338,7 +375,10 @@
         $t=time();
         $myfile1 = fopen("temp/time.txt", "w");
         for ($i = 0; $i <= 5; $i++) {
-          fwrite($myfile1, $t.";\n");
+            fwrite($myfile1, $t.";\n");
+            //changes
+            file_put_contents("temp/timeUltimate.txt", $t.";".PHP_EOL , FILE_APPEND | LOCK_EX);
+            //changes
         }
         //write on a file only the selected tags
         $ranks = fopen("temp/ranks.txt", "w");
@@ -355,13 +395,40 @@
            $final_array[] = $first_page.''.$second_page_array[$key].''.$ranks_array[$key].''.$time_array[$key]."\n";
         }
 
-        file_put_contents('output.txt',$final_array, FILE_APPEND | LOCK_EX);
+
+
+        file_put_contents('temp/outputTemp.txt',$final_array, FILE_APPEND | LOCK_EX);
         //delete the content of the temp files
         file_put_contents("temp/ranks.txt", "");
         file_put_contents("temp/userID.txt", "");
         file_put_contents("temp/time.txt", "");
 
+        //changes
+        $outputsTemp = file("temp/outputTemp.txt",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $timeStamps = file("temp/timeUltimate.txt",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $final = [];
+
+        foreach($outputsTemp as $key=>$first_pages){
+           $final[] = $first_pages.''.$timeStamps[$key]."\n";
+        }
+
+        file_put_contents('output.txt',$final, FILE_APPEND | LOCK_EX);
+
+        file_put_contents("temp/timeUltimate.txt", "");
+        file_put_contents("temp/outputTemp.txt", "");
+
         header("Location: success.html");
       }
+
+      if(isset($_GET['/success.html'])) {
+        $t=time();
+
+        for ($i = 0; $i <= 5; $i++) {
+
+            file_put_contents("temp/timeUltimate.txt", $t.";last".PHP_EOL , FILE_APPEND | LOCK_EX);
+
+        }
+      }
+
 
 ?>
